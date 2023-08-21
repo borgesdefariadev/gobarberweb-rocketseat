@@ -3,7 +3,7 @@ import React from 'react';
 // import { Container } from './styles';
 
 function Dashboard() {
-  return <h1>Hello</h1>;
+  return <h1>DASHBOARD</h1>;
 }
 
 export default Dashboard;

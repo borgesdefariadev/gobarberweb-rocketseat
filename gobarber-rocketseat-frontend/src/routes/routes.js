@@ -11,11 +11,16 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" caseSensitive={false} component={SignIn} />
-        <Route path="/register" caseSensitive={false} component={SignUp} />
+        <Route exact path="/" caseSensitive={false} element={<SignIn />} />
+        <Route path="/register" caseSensitive={false} element={<SignUp />} />
 
-        <Route path="/dashboard" caseSensitive={false} component={Dashboard} />
-        <Route path="/profile" caseSensitive={false} component={Profile} />
+        <Route
+          path="/dashboard"
+          caseSensitive={false}
+          element={<Dashboard />}
+          isPrivate
+        />
+        <Route path="/profile" caseSensitive={false} element={<Profile />} />
       </Routes>
     </Router>
   );
