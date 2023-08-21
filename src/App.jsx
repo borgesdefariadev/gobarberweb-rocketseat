@@ -1,14 +1,16 @@
 import React from 'react';
 import './config/ReactotronConfig';
+import { Outlet } from 'react-router-dom';
 import GlobalStyle from './styles/global';
-import Routes from './routes/routes';
 
 function App() {
   return (
-    <>
-      <Routes />
+    <div className="App">
+      <p>Navbar</p>
+      <Outlet />
       <GlobalStyle />
-    </>
+      <p>footer</p>
+    </div>
   );
 }
 
