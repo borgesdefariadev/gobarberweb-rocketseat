@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import PropTypes from 'prop-types';
@@ -5,7 +6,6 @@ import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
-  Route,
   Navigate,
 } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 
 // Simulate authentication status
-const signed = false;
+const signed = true;
 
 function PrivateRoute({ component: Component, isPrivate, ...rest }) {
   if (isPrivate && !signed) {
@@ -28,7 +28,7 @@ function PrivateRoute({ component: Component, isPrivate, ...rest }) {
   }
 
   // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Route {...rest} element={<Component />} />;
+  return <Component {...rest} element={<Component />} />;
 }
 
 const router = createBrowserRouter([
@@ -39,21 +39,21 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <SignIn />,
+        element: <PrivateRoute component={SignIn} isPrivate={false} />,
       },
       {
         path: '/dashboard',
-        element: <Dashboard isPrivate />,
+        element: <PrivateRoute component={Dashboard} isPrivate />,
         caseSensitive: false,
       },
       {
         path: '/register',
-        element: <SignUp />,
+        element: <PrivateRoute component={SignUp} isPrivate={false} />,
         caseSensitive: false,
       },
       {
         path: 'profile',
-        element: <Profile isPrivate />,
+        element: <PrivateRoute component={Profile} isPrivate />,
         caseSensitive: false,
       },
     ],
