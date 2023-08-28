@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-console */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -9,14 +10,19 @@ import {
   Navigate,
 } from 'react-router-dom';
 
+// paginas de rotas
 import App from './App';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 
+// layouts
+import AuthLayout from './pages/_layouts/auth';
+import DefaultLayout from './pages/_layouts/default';
+
 // Simulate authentication status
-const signed = true;
+const signed = false;
 
 function PrivateRoute({ component: Component, isPrivate, ...rest }) {
   if (isPrivate && !signed) {
@@ -27,8 +33,13 @@ function PrivateRoute({ component: Component, isPrivate, ...rest }) {
     return <Navigate to="/dashboard" />;
   }
 
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Component {...rest} element={<Component />} />;
+  const Layout = signed ? DefaultLayout : AuthLayout;
+
+  return (
+    <Layout>
+      <Component {...rest} />
+    </Layout>
+  );
 }
 
 const router = createBrowserRouter([
