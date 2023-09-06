@@ -22,7 +22,7 @@ import AuthLayout from './pages/_layouts/auth';
 import DefaultLayout from './pages/_layouts/default';
 
 // redux
-import store from './store';
+import { store } from './store';
 
 // Simulate authentication status
 const { signed } = store.getState().auth;
