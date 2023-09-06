@@ -34,7 +34,7 @@ function SignIn() {
           placeholder="Sua Senha secreta"
         />
 
-        <button type="submit"> Acessar</button>
+        <button type="submit">Acessar</button>
         <Link to="/register">Criar conta gratuita</Link>
       </Form>
     </>
