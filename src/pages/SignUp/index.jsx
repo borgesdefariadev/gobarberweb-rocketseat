@@ -28,6 +28,7 @@ function SignUp() {
         <Input name="name" placeholder="Nome Completo" />
         <Input name="email" type="email" placeholder="Seu e-mail" />
         <Input
+          autoComplete="user email"
           name="password"
           type="password"
           placeholder="Sua Senha secreta"
