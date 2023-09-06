@@ -21,8 +21,11 @@ import Profile from './pages/Profile';
 import AuthLayout from './pages/_layouts/auth';
 import DefaultLayout from './pages/_layouts/default';
 
+// redux
+import store from './store';
+
 // Simulate authentication status
-const signed = false;
+const { signed } = store.getState().auth;
 
 function PrivateRoute({ component: Component, isPrivate, ...rest }) {
   if (isPrivate && !signed) {
