@@ -1,9 +1,36 @@
 import React from 'react';
+import { MdNotifications } from 'react-icons/md';
 
-import { Container } from './styles';
+import {
+  Container,
+  Badge,
+  NotificationList,
+  Scroll,
+  Notification,
+} from './styles';
 
 function Notifications() {
-  return <Container />;
+  return (
+    <Container>
+      <Badge hasUnread>
+        <MdNotifications color="#7159c1" size={20} />
+      </Badge>
+      <NotificationList>
+        <Scroll>
+          <Notification unread>
+            <p>Você possui um agendamento para amanhã.</p>
+            <time>há XX horas</time>
+            <button type="button">Marcar como lida</button>
+          </Notification>
+          <Notification>
+            <p>Você possui um agendamento para depois de amanhã.</p>
+            <time>há XX horas</time>
+            <button type="button">Marcar como lida</button>
+          </Notification>
+        </Scroll>
+      </NotificationList>
+    </Container>
+  );
 }
 
 export default Notifications;
