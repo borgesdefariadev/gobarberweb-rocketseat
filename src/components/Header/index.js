@@ -25,7 +25,7 @@ function Header() {
               <Link to="/profile">Meu Perfil</Link>
             </div>
             <img
-              src={profile.avatar.url || 'http://localhost:8080/50/myavatar'}
+              src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortWaved&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light"
               alt="Random Avatar"
             />
           </Profile>

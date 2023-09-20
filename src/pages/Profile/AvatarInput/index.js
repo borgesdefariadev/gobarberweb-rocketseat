@@ -36,7 +36,13 @@ function AvatarInput() {
   return (
     <Container>
       <label htmlFor="avatar">
-        <img src={preview || 'http://localhost:8080/50/myavatar'} alt="" />
+        <img
+          src={
+            preview ||
+            'https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortWaved&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light'
+          }
+          alt=""
+        />
         <input
           type="file"
           id="avatar"
