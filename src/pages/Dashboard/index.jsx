@@ -29,6 +29,10 @@ function Dashboard() {
           <strong>10:00</strong>
           <span>João</span>
         </Time>
+        <Time>
+          <strong>11:00</strong>
+          <span>Lucas</span>
+        </Time>
       </ul>
     </Container>
   );
